@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <title>Deaf Grandpa</title>
+</head>
+<body>
+    <h1>Deaf Grandpa</h1>
+
+    <form action="/say" method="POST">
+        {% csrf_token %}
+        <input type="text" name="say_to_grandpa" />
+        <input type="submit" value="Say!" />
+    </form>
+
+    {%if grandpa_says%}
+        <p>{{grandpa_says}}</p>
+    {%endif%}
+
+</body>
+</html>
